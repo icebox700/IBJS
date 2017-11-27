@@ -11,4 +11,7 @@
 /// <reference path="./modules/errors.ts" />
 /// <reference path="./modules/notifications.ts" />
 
+//  Remove Essent Footer
+$('a[href="http://www.essent.com"]').parent().remove();
+
  console.log('IBJS Essent loaded...');
