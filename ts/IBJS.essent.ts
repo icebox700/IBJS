@@ -10,6 +10,7 @@
 /// <reference path="./modules/access.ts" />
 
 $('.nav-drop').on("mouseover", function() {
+    debugger
     $(this).addClass('is-active');
     $(this).find('.ib-drop').css('display', 'block');
 });
