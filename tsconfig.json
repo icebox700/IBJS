@@ -6,6 +6,10 @@
         "sourceMap": true
             // "outFile": "lib/IBJS.js"
     },
+    "include": [
+        "ts/**/*",
+        "jQuery.d.ts"
+    ],
     "exclude": [
         "node_modules"
     ]

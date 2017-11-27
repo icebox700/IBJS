@@ -7,7 +7,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "lite-server",
         "build_IBJS": "tsc --out ./lib/IBJS.js ts/IBJS.ts ts/modules/cookies.ts ts/modules/validation.ts jQuery.d.ts",
-        "build_IBJS_Essent": "tsc --out ./lib/IBJS.essent.js ts/IBJS.ts ts/modules/cookies.ts ts/modules/validation.ts jQuery.d.ts"
+        "build_IBJS_Essent": "tsc --out ./lib/IBJS.essent.js ts/IBJS.essent.ts ts/modules/cookies.ts ts/modules/validation.ts jQuery.d.ts"
     },
     "author": "",
     "license": "ISC",

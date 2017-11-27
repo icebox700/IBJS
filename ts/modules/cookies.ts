@@ -1,4 +1,5 @@
 module IBCookies  {
+    
     export function createCookie(name: string, value, days: number): void {
         let expires: string;
         if (days) {
