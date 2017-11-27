@@ -9,15 +9,16 @@
 /// <reference path="./modules/validation.ts" />
 /// <reference path="./modules/access.ts" />
 
-$('.nav-drop').on("mouseover", function() {
-    debugger
-    $(this).addClass('is-active');
-    $(this).find('.ib-drop').css('display', 'block');
+$( document ).ready(function() {
+    $('.nav-drop').on("mouseover", function() {
+        $(this).addClass('is-active');
+        $(this).find('.ib-drop').css('display', 'block');
+    });
+
+    $('.nav-drop').on("mouseout", function() {
+        $(this).removeClass('is-active');
+        $(this).find('.ib-drop').css('display', 'none');
+    });
 });
 
-$('.nav-drop').on("mouseout", function() {
-    $(this).removeClass('is-active');
-    $(this).find('.ib-drop').css('display', 'none');
-});
- 
  console.log('IBJS Essent loaded...');
