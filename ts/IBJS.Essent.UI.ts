@@ -16,12 +16,12 @@ $( document ).ready(function() {
 
     $('.nav-drop').on("mouseover", function() {
         $(this).addClass('is-active');
-        $(this).find('.ib-drop').css('display', 'block');
+        $(this).find('.drop').css('display', 'block');
     });
 
     $('.nav-drop').on("mouseout", function() {
         $(this).removeClass('is-active');
-        $(this).find('.ib-drop').css('display', 'none');
+        $(this).find('.drop').css('display', 'none');
     });
 });
     
