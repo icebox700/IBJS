@@ -10,7 +10,6 @@
 /// <reference path="./modules/access.ts" />
 /// <reference path="./modules/errors.ts" />
 /// <reference path="./modules/notifications.ts" />
-/// <reference path="./modules/catalog.ts" />
 
 //  Remove Essent Footer
 

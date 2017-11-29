@@ -1,5 +1,6 @@
 /***************************************
  * IBJS v.01 - Icebox Javascript 
+ * Essent General UI
  * for use within Icebox Projects only
  * 
  * created by Brandons Simms
