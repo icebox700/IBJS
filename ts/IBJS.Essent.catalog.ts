@@ -6,7 +6,6 @@
  * created by Brandons Simms
  ***************************************/
 
-
 $( document ).ready(function() {
     $('.Groups tbody').hide();
 
@@ -61,3 +60,4 @@ $( document ).ready(function() {
         SearchTable.append('<h1 id="ComingSoon"> Coming Soon </h1>');
     }
 });
+console.log('IBJS Essent Catalog loaded...');
