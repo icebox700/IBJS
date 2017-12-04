@@ -70,7 +70,7 @@ $( document ).ready(function() {
 
     $('.trigger-menu').on("mouseover", function() {
         $(this).addClass('nav-is-open');
-        $(this).find('. nav-drop-main .ib-drop').css('display', 'block');
+        $(this).find('.nav-drop-main .ib-drop').css('display', 'block');
     });
 });
     
