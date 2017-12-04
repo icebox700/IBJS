@@ -14,9 +14,9 @@
 $('body').addClass('bd-home');
 $(window).on('resize', function(){
     var win = $(this); //this = window
-    if (win.width() >= 480) { $('body').addClass('is-phone'); }
-    if (win.width() >= 820) { $('body').addClass('is-tablet'); }
-    if (win.width() >= 1280) { $('body').addClass('is-desktop'); }
+    if (win.width() >= 480) { $('body').attr('class', 'bd-home is-phone'); }
+    if (win.width() >= 820) { $('body').attr('class', 'bd-home is-tablet'); }
+    if (win.width() >= 1280) { $('body').attr('class', 'bd-home is-desktop'); }
 });
 
 //  Remove Essent Footer
