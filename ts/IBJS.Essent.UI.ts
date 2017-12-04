@@ -55,8 +55,9 @@ $( document ).ready(function() {
     ibLogin.length && ibLogin.append(essentLogin);
 
     // SearchBar ------------------------------
-    $('#header-searchform').append($('.productSearchInput').find('.formField').attr('placeholder','Find cool stuff...'));
-    // $('input[id*="_ibtnSearchSubmit"').attr('src','https://dl.dropbox.com/s/vn7ctzvskaosk2c/Search.svg?dl=0').addClass('search-submit');
+    $('#header-searchform').append($('.productSearchInput'));
+    $('.productSearchInput .formField').attr('placeholder','Find cool stuff...');
+    $('input[id*="_ibtnSearchSubmit"').attr('src','https://dl.dropbox.com/s/vn7ctzvskaosk2c/Search.svg?dl=0').addClass('search-submit');
 
     // Navigation -----------------------------
     $('.nav-drop').on("mouseover", function() {
