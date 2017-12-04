@@ -29,7 +29,7 @@ $( document ).ready(function() {
     $('.CartInformation .CartTable .DisplayTextBox').each(function() {
         itemCount = itemCount + Number(this.value);
     });
-    itemCount ? $('#minicart').append($('.CartInformation')) : $('.CartInformation').css('display', 'none');
+    itemCount ? $('#minicart .cart-empty').replaceWith($('div[id*="_pnlMicroCart"]')) : $('div[id*="_pnlMicroCart"]').css('display', 'none');
     $('.quantity').html(itemCount.toString());
 
     // Navigation -----------------------------
