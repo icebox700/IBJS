@@ -19,11 +19,11 @@ $( document ).ready(function() {
     var essentLogin = $('.LoginLinks');
     $('.LoginLinks a[id*="_lnkLogIn"]').html('<i class="fa fa-sign-in" aria-hidden="true"></i>Login').addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in');
 
-    var userName = $('span[id*="_lblWelcome"]').length > 0 ? $('span[id*="_lblWelcome"]')[0].innerText.slice(10).slice(0, -3) : false;
+    var userName = $('span[id*="_lblWelcome"]').length > 0 ? $('span[id*="_lblWelcome"]')[0].innerText.slice(10).slice(0, -3).split(/\s+/) : false;
     console.log(userName);
     if (userName) {
         $('.top-nav-account').addClass('account-logged');
-        $('.top-nav-username').html(`Hi, ${userName}`);
+        $('.top-nav-username').html(`Hi, ${userName[0]}`);
         $('.LoginLinks').html('<a href="/Login.html?action=logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>')
             .addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in');
     } else { 
