@@ -21,11 +21,9 @@ const device_adj = (win) => {
     if (win.width() >= desktop) { $('body').attr('class', 'bd-home is-desktop'); }
     return win;
 }
-
 device_adj($(window)).on('resize', function(){
     device_adj($(this));
 });
-
 
 //  Remove Essent Footer
 $('document').ready(function() {

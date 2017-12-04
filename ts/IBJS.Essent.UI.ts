@@ -11,11 +11,11 @@ $.getScript( "https://dl.dropbox.com/s/a50yxh39wsqwink/masterPage.js?dl=0" )
 .done(function( script, textStatus ) {
 });
 
-let Logged_Out_MiniCart = `<div class="cart-empty">
+const Logged_Out_MiniCart: string = `<div class="cart-empty">
 <h3>Your cart is empty.</h3>
-<p>Something missing? <a href="/Chewy/Login.html">Sign in</a> to see items you may have added from another computer or device.</p>
+<p>Something missing? <a href="/Login.html">Sign in</a> to see items you may have added from another computer or device.</p>
 </div>`;
-let Logged_In_MiniCart = `<div class="cart-empty">
+const Logged_In_MiniCart: string = `<div class="cart-empty">
 <h3>Your cart is empty.</h3>
 </div>`;
 
@@ -55,7 +55,7 @@ $( document ).ready(function() {
     ibLogin.length && ibLogin.append(essentLogin);
 
     // SearchBar ------------------------------
-    $('#header-searchform').append($('.productSearchInput'));
+    $('#header-searchform').append($('.productSearchInput').attr('placeholder','Find cool stuff...'));
 
     // Navigation -----------------------------
     $('.nav-drop').on("mouseover", function() {
@@ -70,7 +70,7 @@ $( document ).ready(function() {
 
     $('.trigger-menu').on("mouseover", function() {
         $(this).addClass('nav-is-open');
-        $(this).find('.nav-drop-main .ib-drop').css('display', 'block');
+        $('.nav-drop-main .ib-drop').css('display', 'block');
     });
 });
     
