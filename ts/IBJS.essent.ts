@@ -11,12 +11,17 @@
 /// <reference path="./modules/errors.ts" />
 /// <reference path="./modules/notifications.ts" />
 
+let phone: number = 480;
+let tablet: number = 820;
+let desktop: number = 1280;
+
+
 $('body').addClass('bd-home');
 $(window).on('resize', function(){
     var win = $(this); //this = window
-    if (win.width() >= 480) { $('body').attr('class', 'bd-home is-phone'); }
-    if (win.width() >= 820) { $('body').attr('class', 'bd-home is-tablet'); }
-    if (win.width() >= 1280) { $('body').attr('class', 'bd-home is-desktop'); }
+    if (win.width() <= phone && win.width() > 0) { $('body').attr('class', 'bd-home is-phone'); }
+    if (win.width() <= tablet && win.width() > phone) { $('body').attr('class', 'bd-home is-tablet'); }
+    if (win.width() >= desktop) { $('body').attr('class', 'bd-home is-desktop'); }
 });
 
 //  Remove Essent Footer
