@@ -20,7 +20,7 @@ let Logged_In_MiniCart = `<div class="cart-empty">
 </div>`;
 
 $( document ).ready(function() {
-    
+
     // Mini Cart ----------------------------
     let itemCount: number = 0;
     $('.CartInformation .CartTable .DisplayTextBox').each(function() {
@@ -66,6 +66,11 @@ $( document ).ready(function() {
     $('.nav-drop').on("mouseout", function() {
         $(this).removeClass('is-active');
         $(this).find('.ib-drop').css('display', 'none');
+    });
+
+    $('.trigger-menu').on("mouseover", function() {
+        $(this).addClass('is-active');
+        $(this).find('. nav-drop-main .ib-drop').css('display', 'block');
     });
 });
     
