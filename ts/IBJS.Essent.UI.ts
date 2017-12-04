@@ -33,12 +33,20 @@ $( document ).ready(function() {
     let ibLogin = $('.ib-account-signin');
     let essentLogin = $('.LoginLinks');
     let userName = $('span[id*="_lblWelcome"]').length > 0 ? $('span[id*="_lblWelcome"]')[0].innerText.slice(10).slice(0, -3).split(/\s+/) : false;
-    // let login_buttons = $('.LoginLinks a[id*="_lnkLogIn"]').html('<i class="fa fa-sign-in" aria-hidden="true"></i>Login').addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in');
+    
+    $('.LoginLinks a[id*="_lnkLogIn"]')
+        .html('<i class="fa fa-sign-in" aria-hidden="true"></i>Login')
+        .addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in');
 
-    if (userName) {
+    if (userName) {    
+        $('span[id*="_lblWelcome"]').hide();
+        $('span[id*="_lblDivider"]').hide();
         $('.top-nav-account').addClass('account-logged');
         $('.top-nav-username').html(`Hi, ${userName[0]}`);
-        // login_buttons.html('<i class="fa fa-sign-out" aria-hidden="true"></i>Logout');
+        
+        $('.LoginLinks a[id*="_lnkNewAccount"]').html('<i class="fa fa-sign-out" aria-hidden="true"></i>Logout')
+            .addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in');
+
         itemCount || $('#minicart').html(Logged_In_MiniCart);
     } else { 
         itemCount || $('#minicart').html(Logged_Out_MiniCart);
