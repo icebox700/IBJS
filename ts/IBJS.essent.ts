@@ -11,8 +11,15 @@
 /// <reference path="./modules/errors.ts" />
 /// <reference path="./modules/notifications.ts" />
 
-//  Remove Essent Footer
+$('body').addClass('bd-home');
+$(window).on('resize', function(){
+    var win = $(this); //this = window
+    if (win.width() >= 480) { $('body').addClass('is-phone'); }
+    if (win.width() >= 820) { $('body').addClass('is-tablet'); }
+    if (win.width() >= 1280) { $('body').addClass('is-desktop'); }
+});
 
+//  Remove Essent Footer
 $('document').ready(function() {
     $('a[href="http://www.essent.com"]').parent().remove();
 });

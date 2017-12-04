@@ -20,7 +20,7 @@ let Logged_In_MiniCart = `<div class="cart-empty">
 </div>`;
 
 $( document ).ready(function() {
-
+    
     // Mini Cart ----------------------------
     let itemCount: number = 0;
     $('.CartInformation .CartTable .DisplayTextBox').each(function() {
@@ -44,7 +44,8 @@ $( document ).ready(function() {
         $('.top-nav-account').addClass('account-logged');
         $('.top-nav-username').html(`Hi, ${userName[0]}`);
         login_buttons.hide();
-        $('.LoginLinks a[id*="_lnkNewAccount"]').html('<i class="fa fa-sign-out" aria-hidden="true"></i>Logout')
+        $('.LoginLinks a[id*="_lnkNewAccount"]')
+            .html('<i class="fa fa-sign-out" aria-hidden="true"></i>Logout')
             .addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in');
 
         itemCount || $('#minicart').html(Logged_In_MiniCart);
