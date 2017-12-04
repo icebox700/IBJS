@@ -26,9 +26,10 @@ $( document ).ready(function() {
     // Mini Cart ----------------------------
 
     var itemCount: number = 0;
-    $(".CartInformation .CartTable .DisplayTextBox").each(function() {
+    $('.CartInformation .CartTable .DisplayTextBox').each(function() {
         itemCount = itemCount + Number(this.value);
     });
+    itemCount ? $('#minicart').append($('.CartInformation')) : $('.CartInformation').css('display', 'none');
     $('.quantity').html(itemCount.toString());
 
     // Navigation -----------------------------
