@@ -55,7 +55,7 @@ $( document ).ready(function() {
     ibLogin.length && ibLogin.append(essentLogin);
 
     // SearchBar ------------------------------
-    $('#header-searchform').append($('.productSearchInput').attr('placeholder','Find cool stuff...'));
+    $('#header-searchform').append($('.productSearchInput').find('.formField').attr('placeholder','Find cool stuff...'));
 
     // Navigation -----------------------------
     $('.nav-drop').on("mouseover", function() {
