@@ -14,8 +14,8 @@ $( document ).ready(function() {
     var essentLogin = $('.LoginLinks');
     $('.LoginLinks a[id*="_lnkLogIn"]').html('<i class="fa fa-sign-in" aria-hidden="true"></i>Login').addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in');
     var userName = $('span[id*="_lblWelcome"]').length > 0 ? $('span[id*="_lblWelcome"]')[0].innerText.slice(10).slice(0, -3) : false;
-    userName ? $('.LoginLinks').html('<a href="/Login.html?action=logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>') 
-        : $('.LoginLinks a[id*="_lnkLogIn"]').html('<i class="fa fa-sign-in" aria-hidden="true"></i>Login').addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in');;
+    userName ? $('.LoginLinks').html('<a href="/Login.html?action=logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>').addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in') 
+        : $('.LoginLinks a[id*="_lnkLogIn"]').html('<i class="fa fa-sign-in" aria-hidden="true"></i>Login').addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in');
     ibLogin.length && ibLogin.append(essentLogin);
 
     // Search ---------------------------------
