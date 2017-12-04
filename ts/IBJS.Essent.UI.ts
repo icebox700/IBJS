@@ -57,7 +57,7 @@ $( document ).ready(function() {
     // SearchBar ------------------------------
     $('#header-searchform').append($('.productSearchInput'));
     $('.productSearchInput .formField').attr('placeholder','Find cool stuff...').addClass('nav-search-field');
-    $('input[id*="_ibtnSearchSubmit"').attr('src','https://dl.dropbox.com/s/vn7ctzvskaosk2c/Search.svg?dl=0').addClass('search-submit');
+    $('input[id*="_ibtnSearchSubmit"').attr('src','https://dl.dropbox.com/s/vn7ctzvskaosk2c/Search.svg?dl=0').attr('class','search-submit');
 
     // Navigation -----------------------------
     $('.nav-drop').on("mouseover", function() {
