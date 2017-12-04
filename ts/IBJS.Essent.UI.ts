@@ -23,7 +23,7 @@ $( document ).ready(function() {
     console.log(userName);
     if (userName) {
         $('.top-nav-account').addClass('account-logged');
-        $('.top-nav-username').html(`Hi! ${userName}`);
+        $('.top-nav-username').html(`Hi, ${userName}`);
         $('.LoginLinks').html('<a href="/Login.html?action=logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>')
             .addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in');
     } else { 
