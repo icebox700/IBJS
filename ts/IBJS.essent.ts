@@ -15,14 +15,17 @@ let phone: number = 480;
 let tablet: number = 820;
 let desktop: number = 1280;
 
-
-$('body').addClass('bd-home');
-$(window).on('resize', function(){
-    var win = $(this); //this = window
+const device_adj = (win) => {
     if (win.width() <= phone && win.width() > 0) { $('body').attr('class', 'bd-home is-phone'); }
     if (win.width() <= tablet && win.width() > phone) { $('body').attr('class', 'bd-home is-tablet'); }
     if (win.width() >= desktop) { $('body').attr('class', 'bd-home is-desktop'); }
+    return win;
+}
+
+device_adj($(window)).on('resize', function(){
+    device_adj($(this));
 });
+
 
 //  Remove Essent Footer
 $('document').ready(function() {
