@@ -56,7 +56,7 @@ $( document ).ready(function() {
 
     // SearchBar ------------------------------
     $('#header-searchform').append($('.productSearchInput').find('.formField').attr('placeholder','Find cool stuff...'));
-
+    $('.productSearchInput').find('input[id*="_ibtnSearchSubmit"').attr('src','https://dl.dropbox.com/s/vn7ctzvskaosk2c/Search.svg?dl=0')
     // Navigation -----------------------------
     $('.nav-drop').on("mouseover", function() {
         $(this).addClass('is-active');
