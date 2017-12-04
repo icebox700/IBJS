@@ -6,6 +6,11 @@
  * created by Brandons Simms
  ***************************************/
 
+//For Dev Only! --- Remove and upload when going to prod.
+$.getScript( "https://dl.dropbox.com/s/a50yxh39wsqwink/masterPage.js?dl=0" )
+.done(function( script, textStatus ) {
+});
+
 
 $( document ).ready(function() {
 
@@ -24,7 +29,6 @@ $( document ).ready(function() {
     $('#header-searchform').append($('.productSearchInput'));
 
     // Mini Cart ----------------------------
-
     var itemCount: number = 0;
     $('.CartInformation .CartTable .DisplayTextBox').each(function() {
         itemCount = itemCount + Number(this.value);
