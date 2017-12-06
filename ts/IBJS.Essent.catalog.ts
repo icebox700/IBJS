@@ -9,38 +9,40 @@
 $( document ).ready(function() {
     $('.Groups tbody').hide();
 
-    var SearchTable = $('.SearchTable');
+    let SearchTable: JQuery = $('.SearchTable');
 
-    var productImages = $('.ProductImage');
-    var productPricing = $('.ProductPricing');
-    var productNames = $('.ProductName');
+    let productImages: JQuery = $('.ProductImage');
+    let productPricing: JQuery = $('.ProductPricing');
+    let productNames: JQuery = $('.ProductName');
 
-    var wrap = $('<div></div>', {
+    let wrap: JQuery = $('<div></div>', {
         class: 'product-wrap'
     });
     
     if (productImages.length > 0) {
 
-        for (var i = 0; i < productImages.length; i++) {
-            var div = $('<div></div>', {
-                class: 'product ' + i
+        for (let i: number = 0; i < productImages.length; i++) {
+            let div: JQuery = $('<div></div>', {
+                class: `product ${i}`
             });
-            var productImage = $('<div></div>', {
-                class: 'ProductImage ' + i
+            let productImage: JQuery = $('<div></div>', {
+                class: `ProductImage ${i}`
             });
-            var productName = $('<div></div>', {
-                class: 'ProductName ' + i
+            let productDetail: JQuery = $('<div></div>', {
+                class: `ProductDetail ${i}`
+            })
+            let productName: JQuery = $('<div></div>', {
+                class: `ProductName ${i}`
             });
-            var productPrice = $('<div></div>', {
-                class: 'ProductPricing ' + i
+            var productPrice: JQuery = $('<div></div>', {
+                class: `ProductPricing ${i}`
             });
             
             if (productImages[i].innerHTML === "") {
-//                  debugger
-                var link = $('<a />', {
+                let link = $('<a />', {
                     href: productNames[i].firstChild.attributes[0].value
                 });
-                var img = $('<img />', {
+                let img = $('<img />', {
                     src: 'https://raw.githubusercontent.com/icebox700/IBJS/master/assets/img/ProductImagePlaceholder-01.png',
                     alt: 'Product Image Placeholder'
                 });
@@ -48,8 +50,9 @@ $( document ).ready(function() {
             }
 
             div.append(productImage.append(productImages[i].innerHTML));
-            div.append(productName.append(productNames[i].innerHTML));
-            div.append(productPrice.append(productPricing[i].innerHTML));
+            productDetail.append(productName.append(productNames[i].innerHTML));
+            productDetail.append(productPrice.append(productPricing[i].innerHTML));
+            div.append(productDetail);
 
             wrap.append(div);
         }
