@@ -28,7 +28,9 @@ device_adj($(window)).on('resize', function(){
 });
 
 // Browser Check
-console.log(Browser.get_browser());
+const browser: {name: string, version: number} = Browser.get_browser();
+console.log(browser);
+console.log(Browser.check_browser(browser));
 
 
 //  Remove Essent Footer

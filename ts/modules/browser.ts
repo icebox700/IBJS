@@ -1,14 +1,14 @@
 module Browser {
 
     export const supported_browsers = {
-        Chrome: 47,
-        Edge: 12,
-        Firefox: 43,
-        InternetExplorer: 11,
-        Safari: 7      
+        'Chrome': 47,
+        'Edge': 12,
+        'Firefox': 43,
+        'InternetExplorer': 11,
+        'Safari': 7      
     }
 
-    export const get_browser = (): Object => {
+    export const get_browser = (): {name: string, version: number} => {
         let ua = navigator.userAgent, tem, M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 
         if(/trident/i.test(M[1])){
             tem = /\brv[ :]+(\d+)/g.exec(ua) || []; 
@@ -22,7 +22,12 @@ module Browser {
         if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
         return {
         name: M[0],
-        version: M[1]
+        version: Number(M[1])
         };
+    }
+
+    export let check_browser = (browser: {name: string, version: Number}): Boolean => {
+        if (browser.version <= supported_browsers[browser.name]) return true
+        else return false;
     }
 }
