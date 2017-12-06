@@ -41,13 +41,18 @@ $( document ).ready(function() {
     });
     itemCount ? $('#minicart .cart-empty').replaceWith($('.CartInformation')) : $('.CartInformation').css('display', 'none');
     $('.quantity').html(itemCount.toString());
+
+    if (window.location.pathname.indexOf('Cart.html') > 0 && itemCount === 0) {
+        $('.ShoppingCart').hide();
+        $('.ib-empty-cart').css('display','block');
+    }
  
     // Login ---------------------------------
     if (userName) {
         $('span[id*="_lblWelcome"]').hide();
         $('span[id*="_lblDivider"]').hide();
         $('.top-nav-account').addClass('account-logged');
-        $('.top-nav-username').html(`Hi, ${userName[0]}`).addClass('logged-in');
+        $('.top-nav-username').html(`Hi, ${userName[0]}`);
         login_buttons.hide();
 
         itemCount || $('#minicart').html(Logged_In_MiniCart);
@@ -76,6 +81,9 @@ $( document ).ready(function() {
         $(this).addClass('nav-is-open');
         $('.nav-drop-main .ib-drop').css('display', 'block');
     });
+
+
+
 });
 
 console.log('IBJS Essent UI loaded...');
