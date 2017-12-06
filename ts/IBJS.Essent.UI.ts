@@ -44,7 +44,7 @@ $( document ).ready(function() {
 
     if (window.location.pathname.indexOf('Cart.html') > 0 && itemCount === 0) {
         $('.ShoppingCart').hide();
-        $('.ib-empty-cart').css('display','block');
+        $('#ib-empty-cart').css('display','block');
     }
  
     // Login ---------------------------------
