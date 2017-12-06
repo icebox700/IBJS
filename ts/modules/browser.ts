@@ -29,7 +29,6 @@ module Browser {
     }
 
     export let check_browser = (browser: browser): Boolean => {
-        console.log(supported_browsers[browser.name])
         if (browser.version <= supported_browsers[browser.name]) {
             notify(browser);
             return false

@@ -47,7 +47,7 @@ $( document ).ready(function() {
         $('span[id*="_lblWelcome"]').hide();
         $('span[id*="_lblDivider"]').hide();
         $('.top-nav-account').addClass('account-logged');
-        $('.top-nav-username').html(`Hi, ${userName[0]}`);
+        $('.top-nav-username').html(`Hi, ${userName[0]}`).addClass('logged-in');
         login_buttons.hide();
 
         itemCount || $('#minicart').html(Logged_In_MiniCart);
