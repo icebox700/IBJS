@@ -1,5 +1,7 @@
 module Browser {
 
+    type browser = { name: string, version: Number };
+
     export const supported_browsers = {
         'Chrome': 47,
         'Edge': 12,
@@ -8,7 +10,7 @@ module Browser {
         'Safari': 7      
     }
 
-    export const get_browser = (): {name: string, version: number} => {
+    export const get_browser = (): browser => {
         let ua = navigator.userAgent, tem, M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 
         if(/trident/i.test(M[1])){
             tem = /\brv[ :]+(\d+)/g.exec(ua) || []; 
@@ -26,9 +28,16 @@ module Browser {
         };
     }
 
-    export let check_browser = (browser: {name: string, version: Number}): Boolean => {
+    export let check_browser = (browser: browser): Boolean => {
         console.log(supported_browsers[browser.name])
-        if (browser.version <= supported_browsers[browser.name]) return true
-        else return false;
+        if (browser.version <= supported_browsers[browser.name]) {
+            notify(browser);
+            return false
+        }
+        else return true;
+    }
+
+    export let notify = (browser: browser): void => {
+        console.error(`¡!The current browser is not supported on this site!¡ You may encounter problems. - ${browser} -  Supported Browsers: ${supported_browsers}`);
     }
 }
