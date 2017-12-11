@@ -7,7 +7,7 @@
  ***************************************/
 
 $( document ).ready(function() {
-    $('.Groups tbody').hide();
+    $('.SearchTable tbody').hide();
 
     let SearchTable: JQuery = $('.SearchTable');
 
