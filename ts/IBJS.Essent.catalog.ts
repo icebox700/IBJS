@@ -9,43 +9,41 @@
 $( document ).ready(function() {
     $('.SearchTable tbody').hide();
 
-    let SearchTable: JQuery = $('.SearchTable');
-
-    let productImages: JQuery = $('.ProductImage');
-    let productPricing: JQuery = $('.ProductPricing');
-    let productNames: JQuery = $('.ProductName');
-
-    let wrap: JQuery = $('<div></div>', {
-        class: 'product-wrap'
-    });
+    let SearchTable: JQuery = $('.SearchTable'),
+        productImages: JQuery = $('.ProductImage'),
+        productPricing: JQuery = $('.ProductPricing'),
+        productNames: JQuery = $('.ProductName'),
+        wrap: JQuery = $('<div></div>', {
+            class: 'product-wrap'
+        });
     
     if (productImages.length > 0) {
-
         for (let i: number = 0; i < productImages.length; i++) {
             let div: JQuery = $('<div></div>', {
                 class: `product ${i}`
-            });
-            let productImage: JQuery = $('<div></div>', {
+            }),
+            productImage: JQuery = $('<div></div>', {
                 class: `ProductImage ${i}`
-            });
-            let productDetail: JQuery = $('<div></div>', {
+            }),
+            productDetail: JQuery = $('<div></div>', {
                 class: `ProductDetail ${i}`
-            })
-            let productName: JQuery = $('<div></div>', {
+            }),
+            productName: JQuery = $('<div></div>', {
                 class: `ProductName ${i}`
-            });
-            var productPrice: JQuery = $('<div></div>', {
+            }),
+            productPrice: JQuery = $('<div></div>', {
                 class: `ProductPricing ${i}`
             });
             
             if (productImages[i].innerHTML === "") {
                 let link = $('<a />', {
                     href: productNames[i].firstChild.attributes[0].value
-                });
-                let img = $('<img />', {
+                }),
+                img = $('<img />', {
                     src: 'https://raw.githubusercontent.com/icebox700/IBJS/master/assets/img/ProductImagePlaceholder-01.png',
                     alt: 'Product Image Placeholder'
                 });
+                
                 img.appendTo(productImages[i]).wrap(link);
             }
 
