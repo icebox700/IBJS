@@ -37,6 +37,6 @@ module Browser {
     }
 
     export let notify = (browser: browser): void => {
-        console.error(`¡!The current browser is not supported on this site!¡ You may encounter problems. - ${browser} -  Supported Browsers: ${supported_browsers}`);
+        console.error(`¡!The current browser is not supported on this site!¡ You may encounter problems. - ${browser.name} | ${browser.version} -  Supported Browsers: ${supported_browsers.toString()}`);
     }
 }
