@@ -37,6 +37,6 @@ $('document').ready(function() {
     $('a[href="http://www.essent.com"]').parent().remove();
 });
 
-window.sessionStorage.setItem('IBJS', this);
+window['IBJS'] = this;
 
 console.log('IBJS Essent loaded...');
