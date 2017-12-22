@@ -46,6 +46,7 @@ $( document ).ready(function() {
         $('.ShoppingCart').hide();
         $('.cart-header').hide();
         $('#ib-empty-cart').css('display','block');
+        $('.ib-back').addClass('empty');
     }
  
     // Login ---------------------------------
