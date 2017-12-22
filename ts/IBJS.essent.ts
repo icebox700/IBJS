@@ -29,6 +29,9 @@ device_adj($(window)).on('resize', function(){
 const current_browser: {name: string, version: Number} = Browser.get_browser();
 Browser.check_browser(current_browser);
 
+backtrack => {// Go back function to be added to the navigation class
+    window.history.back();
+}
 
 //  Remove Essent Footer
 $('document').ready(function() {
