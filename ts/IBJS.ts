@@ -1,14 +1,13 @@
 /***************************************
- * IBJS v.01 - Icebox Javascript 
+ * IBJS v.01 - Icebox Javascript
  * for use within Icebox Projects only
- * 
+ *
  * created by Brandons Simms
  ***************************************/
+import { Navigation } from './classes/navigation';
 
-/// <reference path="./modules/cookies.ts" />
-/// <reference path="./modules/validation.ts" />
-
- const body = $('body');
- const site = window.location.host;
- 
- console.log('IBJS loaded...');
+module IBJS {
+    export const body: JQuery = $('body');
+    export const site: String = window.location.host;
+    // let Navigation;
+}

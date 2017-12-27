@@ -7,7 +7,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "lite-server",
         "build_all": "tsc --out ./lib/IBJS.js ts/IBJS.ts ts/modules/cookies.ts ts/modules/validation.ts jQuery.d.ts | tsc --out ./lib/IBJS.essent.js ts/IBJS.essent.ts ts/modules/cookies.ts ts/modules/validation.ts jQuery.d.ts | tsc --out ./lib/IBJS.essent.UI.js ts/IBJS.essent.UI.ts jQuery.d.ts",
-        "build_IBJS": "tsc --out ./lib/IBJS.js ts/IBJS.ts ts/modules/cookies.ts ts/modules/validation.ts jQuery.d.ts",
+        "build_IBJS": "tsc --outFile ./lib/IBJS.js ts/IBJS.ts jQuery.d.ts",
         "build_IBJS_Essent": "tsc --out ./lib/IBJS.essent.js ts/IBJS.essent.ts ts/modules/cookies.ts ts/modules/validation.ts jQuery.d.ts",
         "build_IBJS_Essent_UI": "tsc --out ./lib/IBJS.essent.UI.js ts/IBJS.essent.UI.ts jQuery.d.ts",
         "build_IBJS_Essent_Catalog": "tsc --out ./lib/IBJS.essent.catalog.js ts/IBJS.essent.catalog.ts jQuery.d.ts"
