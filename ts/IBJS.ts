@@ -5,7 +5,10 @@
  * created by Brandons Simms
  ***************************************/
 
-class IBJS extends Window {
+class IBJS {
+    constructor() {
+        console.log('testing')
+      };
     public body: JQuery = $('body');
     public site: String = window.location.host;
 }
@@ -47,6 +50,8 @@ class Cookies extends IBJS {
         return document.cookie.split(';');
     }
 }
+
+window.IBJS = IBJS;
 
 // //
 // $( document ).ready(function() {

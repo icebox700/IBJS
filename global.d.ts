@@ -1,1 +1,3 @@
-interface Window { IBJS: any; }
+interface Window { 
+    IBJS: any; 
+}
