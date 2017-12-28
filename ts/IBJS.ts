@@ -6,13 +6,35 @@
  ***************************************/
 
 class IBJS {
-        
+    public length;
+
+    dom(els) {
+        for(var i = 0; i < els.length; i++ ) {
+            this[i] = els[i];
+        }
+        this.length = els.length;
+    }
+    get(selector) {
+        var els;
+        if (typeof selector === "string") {
+            els = document.querySelectorAll(selector);
+        } else if (selector.length) {
+            els = selector;
+        } else {
+            els = [selector];
+        }
+        return new this.dom(els);
+    }
 }
 
 class Navigation extends IBJS {
     public backtrack = () => {
         window.history.back();
     }
+}
+
+class UI extends IBJS {
+
 }
 
 class Cookies extends IBJS {
@@ -49,6 +71,7 @@ class Cookies extends IBJS {
 
 // Instantiate 
 window.IBJS = new IBJS;
+window.IBJS.UI = new UI;
 window.IBJS.Navigation = new Navigation;
 window.IBJS.Cookies = new Cookies;
 
