@@ -5,10 +5,7 @@
  * created by Brandons Simms
  ***************************************/
 
-class IBJS {
-    constructor() {
-        console.log('testing')
-      };
+class IBJS extends Window {
     public body: JQuery = $('body');
     public site: String = window.location.host;
 }
