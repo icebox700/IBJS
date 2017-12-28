@@ -56,4 +56,4 @@ class Cookies extends IBJS {
     }
 }
 // Maybe not needed
-window.IBJS = IBJS;
+window.IBJS = new IBJS;
