@@ -8,7 +8,8 @@
     },
     "include": [
         "ts/**/*",
-        "jQuery.d.ts"
+        "jQuery.d.ts",
+        "global.d.ts"
     ],
     "exclude": [
         "node_modules"
