@@ -6,11 +6,16 @@
  ***************************************/
 
 class IBJS {
-    constructor() {
-        console.log('testing')
-      };
-    public body: JQuery = $('body');
-    public site: String = window.location.host;
+    public createCookie = (name: string, value, days: number): void => {
+        let expires: string;
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = `; expires=${date.toUTCString()}`
+        }
+        document.cookie = `${name}=${value + expires}; path=/`;
+    }
+    
 }
 
 class Navigation extends IBJS {
@@ -50,10 +55,5 @@ class Cookies extends IBJS {
         return document.cookie.split(';');
     }
 }
-
+// Maybe not needed
 window.IBJS = IBJS;
-
-// //
-// $( document ).ready(function() {
-
-// });
