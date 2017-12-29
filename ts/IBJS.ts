@@ -48,12 +48,12 @@ class Validate extends IBJS  {
 }
 window.IBJS.Validate = new Validate;
 
-class Navigation extends IBJS {
+class Nav extends IBJS {
     public backtrack = () => {
         window.history.back();
     }
 }
-window.IBJS.Navigation = new Navigation;
+window.IBJS.Navigation = new Nav;
 
 class UI extends IBJS {
 }
