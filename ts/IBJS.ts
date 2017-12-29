@@ -105,7 +105,7 @@ window.IBJS.Cookies = new Cookies;
 
 class Access {
     validateUser = (email, pass): boolean | void  => {
-        if (window.IBJS.Validate.email(email) && pass !== '') {
+        if (window.IBJS.Validate.isEmail(email) && pass !== '') {
             $.ajax({
                 url: "https://icebox-coolstuff.herokuapp.com/api/varify",
                 type: "POST",
