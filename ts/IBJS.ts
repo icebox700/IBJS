@@ -30,7 +30,7 @@ class IBJS {
     }
 }
 window.IBJS = new IBJS;
-let IB = window.IBJS.get();
+let IB = window.IBJS.get;
 
 
 class Validate extends IBJS  {
