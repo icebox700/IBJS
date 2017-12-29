@@ -8,12 +8,15 @@
 class IBJS {
     public length;
 
-    dom(els) {
+    // Add to DOM Element
+    DOM(els) {
         for(var i = 0; i < els.length; i++ ) {
             this[i] = els[i];
         }
         this.length = els.length;
     }
+
+    // Get DOM Element
     get(selector) {
         var els;
         if (typeof selector === "string") {
@@ -23,19 +26,38 @@ class IBJS {
         } else {
             els = [selector];
         }
-        return new this.dom(els);
+        return new this.DOM(els);
     }
 }
+window.IBJS = new IBJS;
+let IB = window.IBJS.get();
+
+
+class Validate extends IBJS  {
+    
+    isEmail(email): boolean {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
+
+    isPhoneNumber(number): boolean {
+        let regex = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/;
+        return regex.test(number);
+    }
+    
+}
+window.IBJS.Validate = new Validate;
 
 class Navigation extends IBJS {
     public backtrack = () => {
         window.history.back();
     }
 }
+window.IBJS.Navigation = new Navigation;
 
 class UI extends IBJS {
-
 }
+window.IBJS.UI = new UI;
 
 class Cookies extends IBJS {
 
@@ -68,10 +90,34 @@ class Cookies extends IBJS {
         return document.cookie.split(';');
     }
 }
-
-// Instantiate 
-window.IBJS = new IBJS;
-window.IBJS.UI = new UI;
-window.IBJS.Navigation = new Navigation;
 window.IBJS.Cookies = new Cookies;
+
+class Access extends IBJS {
+    validateUser = (email, pass): boolean | void  => {
+        if (window.IBJS.Validate.email(email) && pass !== '') {
+            $.ajax({
+                url: "https://icebox-coolstuff.herokuapp.com/api/varify",
+                type: "POST",
+                crossDomain: true,
+                data: { email: email, site: 'site' },
+                dataType: "json",
+                success: function(response) {
+                    if (response.success === true) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                },
+                error: function(xhr, status) {
+                    alert(status);
+                    return false;
+                }
+            });
+        };
+    }
+}
+window.IBJS.Access = new Access;
+
+    
+
 
