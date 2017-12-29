@@ -28,13 +28,24 @@ class IBJS {
         }
         return new this.DOM(els);
     }
+    
+    map(callback) {
+        var results = [], i = 0;
+        for ( ; i < this.length; i++) {
+            results.push(callback.call(this, this[i], i));
+        }
+        return results;
+    }
+
+    forEach(callback) {
+        this.map(callback);
+        return this;
+    }
 }
 window.IBJS = new IBJS;
 let IB = window.IBJS.get;
 
-
-class Validate extends IBJS  {
-    
+class Validate  {
     isEmail(email): boolean {
         var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         return regex.test(email);
@@ -48,18 +59,18 @@ class Validate extends IBJS  {
 }
 window.IBJS.Validate = new Validate;
 
-class Nav extends IBJS {
+class Nav {
     public backtrack = () => {
         window.history.back();
     }
 }
 window.IBJS.Navigation = new Nav;
 
-class UI extends IBJS {
+class UI {
 }
 window.IBJS.UI = new UI;
 
-class Cookies extends IBJS {
+class Cookies {
 
     public createCookie = (name: string, value, days: number): void => {
         let expires: string;
@@ -92,7 +103,7 @@ class Cookies extends IBJS {
 }
 window.IBJS.Cookies = new Cookies;
 
-class Access extends IBJS {
+class Access {
     validateUser = (email, pass): boolean | void  => {
         if (window.IBJS.Validate.email(email) && pass !== '') {
             $.ajax({
