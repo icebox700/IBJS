@@ -43,7 +43,7 @@ class IBJS {
     }
 }
 window.IBJS = new IBJS;
-let IB = window.IBJS.get;
+window.π = window.IBJS.get;
 
 class Validate  {
     isEmail(email): boolean {
