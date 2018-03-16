@@ -15,7 +15,7 @@
 let phone: number = 480, tablet: number = 820, desktop: number = 1280;
 
 // Set/Update Body Class
-// Set/Update Body Class
+// This is terrible. Fix this!!
 var device_adj = function(win) {
     if (win.width() <= phone && win.width() > 0) {
         $('body').attr('class', 'bd-home is-phone');
