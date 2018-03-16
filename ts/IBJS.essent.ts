@@ -15,12 +15,22 @@
 let phone: number = 480, tablet: number = 820, desktop: number = 1280;
 
 // Set/Update Body Class
-const device_adj = (win) => {
-    if (win.width() <= phone && win.width() > 0) { $('body').attr('class', 'bd-home is-phone'); }
-    if (win.width() <= tablet && win.width() > phone) { $('body').attr('class', 'bd-home is-tablet'); }
-    if (win.width() >= desktop) { $('body').attr('class', 'bd-home is-desktop'); }
+// Set/Update Body Class
+var device_adj = function(win) {
+    if (win.width() <= phone && win.width() > 0) {
+        $('body').attr('class', 'bd-home is-phone');
+        $('.resp').removeClass('is-tablet').removeClass('is-desktop').addClass('is-phone');
+    }
+    if (win.width() <= desktop && win.width() > phone) {
+        $('body').attr('class', 'bd-home is-tablet');
+        $('.resp').removeClass('is-phone').removeClass('is-desktop').addClass('is-tablet');
+    }
+    if (win.width() >= desktop) {
+        $('body').attr('class', 'bd-home is-desktop');
+        $('.resp').removeClass('is-tablet').removeClass('is-phone').addClass('is-desktop');
+    }
     return win;
-}
+};
 device_adj($(window)).on('resize', function(){
     device_adj($(this));
 });
