@@ -37,7 +37,7 @@ $( document ).ready(function() {
 
     // Mini Cart ----------------------------
     $('.cartItemGroup .ItemQty span').each(function() {
-        itemCount = itemCount + Number(this.value);
+        itemCount = itemCount + Number(this.textContent);
     });
     itemCount ? $('#minicart .cart-empty').replaceWith($('.CartInformation')) : $('.CartInformation').css('display', 'none');
     $('.quantity').html(itemCount.toString());
