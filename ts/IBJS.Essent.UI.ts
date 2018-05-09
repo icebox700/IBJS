@@ -80,9 +80,8 @@ $( document ).ready(function() {
     });
     
     $('.toggle-menu').on("click", function() { 
-        $(this).children('.menu-item').children('.fa').toggleClass('fa-times'); 
-        $(this).children('.menu-item').children('.fa').toggleClass('fa-bars'); 
-        $(this).children('.ib-drop').toggleClass('is-active'); 
+        $(this).children('.menu-item').children('.fa').toggleClass('fa-times').toggleClass('fa-bars'); 
+        $(this).children('.ib-drop').toggleClass('active'); 
     }); 
 
     $('.trigger-menu').on("mouseover", function() {
