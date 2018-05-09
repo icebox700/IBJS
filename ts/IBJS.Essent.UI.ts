@@ -36,8 +36,8 @@ $( document ).ready(function() {
         .addClass('ib-btn ib-btn--action ib-btn--full js-header-sign-in');
 
     // Mini Cart ----------------------------
-    $('.CartInformation .CartTable .DisplayTextBox').each(function() {
-        itemCount = itemCount + Number(this.value);
+    $('.cartItemGroup .ItemQty span').each(function() {
+        itemCount = itemCount + Number($(this)[0].textContent);
     });
     itemCount ? $('#minicart .cart-empty').replaceWith($('.CartInformation')) : $('.CartInformation').css('display', 'none');
     $('.quantity').html(itemCount.toString());
