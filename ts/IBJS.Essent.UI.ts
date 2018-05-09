@@ -42,12 +42,12 @@ $( document ).ready(function() {
     itemCount ? $('#minicart .cart-empty').replaceWith($('.CartInformation')) : $('.CartInformation').css('display', 'none');
     $('.quantity').html(itemCount.toString());
 
-    if (window.location.pathname.indexOf('Cart.html') > 0 && itemCount === 0) {
-        $('.ShoppingCart').hide();
-        $('.cart-header').hide();
-        $('#ib-empty-cart').css('display','block');
-        $('.ib-back').addClass('empty');
-    }
+    // if (window.location.pathname.indexOf('Cart.html') > 0 && itemCount === 0) {
+    //     $('.ShoppingCart').hide();
+    //     $('.cart-header').hide();
+    //     $('#ib-empty-cart').css('display','block');
+    //     $('.ib-back').addClass('empty');
+    // }
  
     // Login ---------------------------------
     if (userName) {
