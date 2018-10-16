@@ -23,6 +23,10 @@ $( document ).ready(function() {
         $(this).removeClass('is-active');
         $(this).find('.ib-drop').css('display', 'none');
     });
+
+    $( "#menu-toggle" ).click(function() {
+        $( "#mySidenav" ).toggle();
+    });
 });
     
      console.log('IBJS Essent UI loaded...');
