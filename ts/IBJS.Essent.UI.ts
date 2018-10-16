@@ -24,8 +24,9 @@ $( document ).ready(function() {
         $(this).find('.ib-drop').css('display', 'none');
     });
 
-    $( "#menu-toggle" ).click(function() {
-        $( "#mySidenav" ).toggle();
+    $('#menu-toggle').click(function() {
+        console.log('menu toggle')
+        $('#mySidenav').toggle();
     });
 });
     
